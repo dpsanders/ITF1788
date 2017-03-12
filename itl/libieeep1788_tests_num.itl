@@ -95,6 +95,9 @@ testcase minimal_mid_test {
     mid [-2.0,2.0] = 0.0;
     mid [-0X0.0000000000002P-1022,0X0.0000000000001P-1022] = 0.0;
     mid [-0X0.0000000000001P-1022,0X0.0000000000002P-1022] = 0.0;
+    mid [-infinity,1.0] = -0x1.FFFFFFFFFFFFFp1023;
+    mid [1.0,+infinity] = +0x1.FFFFFFFFFFFFFp1023;
+    mid [empty] = nan;
 }
 
 testcase minimal_mid_dec_test {
