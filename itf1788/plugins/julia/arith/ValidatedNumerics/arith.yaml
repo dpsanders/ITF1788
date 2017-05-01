@@ -25,6 +25,7 @@ preamble: |
     setprecision(53)
     setprecision(Interval, Float64)
     setrounding(Interval, :correct)
+    @format full
 
 # intervals
 nai_interval_double: nai()
