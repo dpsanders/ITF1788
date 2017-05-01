@@ -24,7 +24,7 @@ imports: |
 preamble: |
     setprecision(53)
     setprecision(Interval, Float64)
-    setrounding(Interval, :narrow)
+    setrounding(Interval, :correct)
 
 # intervals
 nai_interval_double: nai()
@@ -214,22 +214,24 @@ op_isMember*: |
 # op_overlap*: overlap ($ARG1, $ARG2)
 #
 # # Reverse-mode elementary functions
-# op_absRev*: absrev ($ARG1)
-# op_absRevBin*: absrev ($ARG1, $ARG2)
-# op_sqrRev*: sqrrev ($ARG1)
-# op_sqrRevBin*: sqrrev ($ARG1, $ARG2)
+op_absRev*: abs_rev($ARG1, -∞..∞)[2]
+op_absRevBin*: abs_rev($ARG1, $ARG2)[2]
+
+op_sqrRev*: sqr_rev($ARG1, -∞..∞)[2]
+op_sqrRevBin*: sqr_rev($ARG1, $ARG2)[2]
+
 # op_pownRev*: pownrev ($ARG1, $ARG2)
 # op_pownRevBin*: pownrev ($ARG1, $ARG2, $ARG3)
-# op_sinRev*: sinrev ($ARG1)
-# op_sinRevBin*: sinrev ($ARG1, $ARG2)
-# op_cosRev*: cosrev ($ARG1)
-# op_cosRevBin*: cosrev ($ARG1, $ARG2)
-# op_tanRev*: tanrev ($ARG1)
-# op_tanRevBin*: tanrev ($ARG1, $ARG2)
+op_sinRev*: sin_rev($ARG1, -∞..∞)[2]
+op_sinRevBin*: sin_rev($ARG1, $ARG2)[2]
+op_cosRev*: cos_rev($ARG1, -∞..∞)[2]
+op_cosRevBin*: cos_rev($ARG1, $ARG2)[2]
+op_tanRev*: tan_rev($ARG1, -∞..∞)[2]
+op_tanRevBin*: tan_rev($ARG1, $ARG2)[2]
 # op_coshRev*: coshrev ($ARG1)
 # op_coshRevBin*: coshrev ($ARG1, $ARG2)
-# op_mulRev*: mulrev ($ARG1, $ARG2)
-# op_mulRevTen*: mulrev ($ARG1, $ARG2, $ARG3)
+op_mulRev*: mul_rev($ARG1, $ARG2, -∞..∞)[3]
+op_mulRevTen*: mul_rev($ARG1, $ARG2, $ARG3)[3]
 # op_powRev1*: powrev1 ($ARG1, $ARG2, $ARG3)
 # op_powRev2*: powrev2 ($ARG1, $ARG2, $ARG3)
 # op_atan2Rev1*: atan2rev1 ($ARG1, $ARG2, $ARG3)
