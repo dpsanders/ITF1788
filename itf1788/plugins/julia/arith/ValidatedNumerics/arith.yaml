@@ -24,7 +24,7 @@ imports: |
 preamble: |
     setprecision(53)
     setprecision(Interval, Float64)
-    setrounding(Interval, :correct)
+    # setrounding(Interval, :correct)
     @format full
 
 # intervals
@@ -231,8 +231,8 @@ op_tanRev*: tan_rev($ARG1, -∞..∞)[2]
 op_tanRevBin*: tan_rev($ARG1, $ARG2)[2]
 # op_coshRev*: coshrev ($ARG1)
 # op_coshRevBin*: coshrev ($ARG1, $ARG2)
-op_mulRev*: mul_rev($ARG1, $ARG2, -∞..∞)[3]
-op_mulRevTen*: mul_rev($ARG1, $ARG2, $ARG3)[3]
+op_mulRev*: mul_rev_IEEE1788($ARG1, $ARG2, -∞..∞)
+op_mulRevTen*: mul_rev_IEEE1788($ARG1, $ARG2, $ARG3)
 # op_powRev1*: powrev1 ($ARG1, $ARG2, $ARG3)
 # op_powRev2*: powrev2 ($ARG1, $ARG2, $ARG3)
 # op_atan2Rev1*: atan2rev1 ($ARG1, $ARG2, $ARG3)
