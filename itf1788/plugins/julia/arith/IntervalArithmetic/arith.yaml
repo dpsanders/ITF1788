@@ -115,19 +115,19 @@ op_mul*: $ARG1 * $ARG2
 op_div*: $ARG1 / $ARG2
 op_recip*: |
     inv($ARG1)
-    ($ARG1)^(-1)
-    ($ARG1)^(-1//1)
-    ($ARG1)^(-1.0)
+    pow($ARG1, -1)
+    pow($ARG1, -1//1)
+    pow($ARG1, -1.0)
     1 /($ARG1)
 op_sqr*: |
-    $ARG1 ^2
-    $ARG1 ^(2//1)
-    $ARG1 ^(2.0)
+    pow($ARG1, 2)
+    pow($ARG1, 2//1)
+    pow($ARG1, 2.0)
 op_sqrt*: |
     sqrt($ARG1)
-    ($ARG1)^(1/2)
-    ($ARG1)^(0.5)
-    ($ARG1)^(1//2)
+    pow($ARG1, 1/2)
+    pow($ARG1, 0.5)
+    pow($ARG1, 1//2)
 op_fma*: fma($ARG1, $ARG2, $ARG3)
 
 # Power functions
