@@ -14,10 +14,7 @@ matrix:
   include:
     - env: ARITH=octave-interval
       sudo: required
-    - env: ARITH=IntervalArithmetic.jl TEST=Base.Test
-      sudo: required
-      dist: trusty
-    - env: ARITH=IntervalArithmetic.jl TEST=FactCheck
+    - env: ARITH=IntervalArithmetic.jl TEST=Test
       sudo: required
       dist: trusty
 
@@ -48,9 +45,6 @@ install:
   -
     if [ "$ARITH" == "IntervalArithmetic.jl" ]; then
       julia -q --eval 'Pkg.add("IntervalArithmetic")';
-      if [ "$TEST" == "FactCheck" ]; then
-        julia -q --eval 'Pkg.add("FactCheck")';
-      fi
     fi
 
 script:
