@@ -131,8 +131,8 @@ op_sqrt*: |
 op_fma*: fma($ARG1, $ARG2, $ARG3)
 
 # Power functions
-op_pown*: $ARG1 ^ $ARG2
-op_pow*: $ARG1 ^ $ARG2
+op_pown*: pow($ARG1, $ARG2)
+op_pow*: pow($ARG1, $ARG2)
 op_exp*: exp($ARG1)
 op_exp2*: exp2($ARG1)
 op_exp10*: exp10($ARG1)
